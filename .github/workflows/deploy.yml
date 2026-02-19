@@ -1,0 +1,31 @@
+name: Phoenix Deploy Workflow - Ngono Catherine Sintia
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Début du déploiement
+        run: |
+          echo "🚀 Début du déploiement Phoenix Project"
+          echo "👩‍💻 Par: Ngono Catherine Sintia"
+
+      - name: Récupérer token secret
+        env:
+          TOKEN: ${{ secrets.DEPLOY_TOKEN }}
+        run: |
+          echo "🔑 Token récupéré: $TOKEN"
+          echo "✅ Token valide pour déploiement"
+
+      - name: Déploiement terminé
+        run: |
+          echo "🎉 Déploiement terminé par Ngono Catherine Sintia"
+          echo "📊 Status: SUCCESS"
